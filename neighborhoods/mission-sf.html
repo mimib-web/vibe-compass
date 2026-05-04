@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SF Mission District BIPOC Guide — Best Latinx, Asian & BIPOC Restaurants & Culture | Vibe Compass</title>
+  <meta name="description" content="Your guide to the best Latinx-owned, Asian-owned, and BIPOC-centered restaurants, bakeries, murals, and culture in San Francisco's Mission District." />
+  <link rel="canonical" href="https://thevibecompass.com/neighborhoods/mission-sf.html" />
+
+  <meta property="og:title" content="SF Mission District BIPOC Guide — Vibe Compass" />
+  <meta property="og:description" content="The best Latinx-owned, Asian-owned, and BIPOC-centered spots in San Francisco's Mission District. Curated by locals." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1200&h=630&fit=crop" />
+  <meta property="og:type" content="article" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "SF Mission District BIPOC Guide: Best Latinx & Minority-Owned Restaurants, Culture & Eats",
+    "description": "A complete neighborhood guide to BIPOC-owned and BIPOC-centered businesses in San Francisco's Mission District.",
+    "url": "https://thevibecompass.com/neighborhoods/mission-sf.html",
+    "publisher": { "@type": "Organization", "name": "Vibe Compass", "url": "https://thevibecompass.com" },
+    "about": { "@type": "Place", "name": "Mission District, San Francisco, California" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --ink: #1A1209; --cream: #FFF8F0; --gold: #E8A838; --coral: #D4614A; --plum: #3B1F4E; --card-bg: #FFFCF7; --border: #EDE8E0; --tag-bg: #F5EFE6; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--plum); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 62px; }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--gold); text-decoration: none; }
+    .nav-logo span { color: #fff; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    nav ul a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--ink) !important; padding: 8px 18px; border-radius: 100px; font-weight: 600 !important; }
+    @media (max-width: 640px) { nav ul { display: none; } }
+
+    .hero-guide { position: relative; height: 420px; overflow: hidden; display: flex; align-items: flex-end; }
+    .hero-guide img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-guide::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,18,9,0.85) 40%, rgba(0,0,0,0.2)); }
+    .hero-guide-content { position: relative; z-index: 2; padding: 40px 5%; width: 100%; }
+    .breadcrumb { font-size: 0.78rem; color: rgba(255,255,255,0.55); margin-bottom: 10px; }
+    .breadcrumb a { color: var(--gold); text-decoration: none; }
+    .hero-guide h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 5vw, 3.8rem); color: #fff; line-height: 1.1; margin-bottom: 12px; }
+    .hero-guide p { font-size: 1rem; color: rgba(255,255,255,0.72); max-width: 560px; }
+
+    .page-wrap { max-width: 860px; margin: 0 auto; padding: 56px 5%; }
+    .intro { font-size: 1.08rem; color: #4A3F34; line-height: 1.75; margin-bottom: 48px; border-left: 3px solid var(--coral); padding-left: 20px; }
+
+    h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 6px; margin-top: 52px; }
+    .section-sub { color: #6B5F52; font-size: 0.9rem; margin-bottom: 28px; }
+
+    .spot-list { display: flex; flex-direction: column; gap: 20px; }
+    .spot { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; display: flex; gap: 18px; align-items: flex-start; }
+    .spot-num { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--coral); flex-shrink: 0; line-height: 1; min-width: 28px; }
+    .spot-info { flex: 1; }
+    .spot-name { font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin-bottom: 4px; }
+    .spot-meta { font-size: 0.76rem; color: #8B7B6B; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .ownership-badge { font-size: 0.66rem; font-weight: 600; padding: 2px 8px; border-radius: 100px; }
+    .black-owned { background: #1A1209; color: #fff; }
+    .asian-owned { background: #D4614A; color: #fff; }
+    .latinx-owned { background: #5C7C6B; color: #fff; }
+    .bipoc-owned { background: var(--plum); color: #fff; }
+    .spot p { font-size: 0.875rem; color: #4A3F34; line-height: 1.6; }
+    .spot-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+    .tag { background: var(--tag-bg); color: #5C4F42; font-size: 0.7rem; padding: 3px 10px; border-radius: 100px; border: 1px solid var(--border); }
+
+    .callout { background: #1F3A2E; color: #fff; border-radius: 16px; padding: 28px; margin: 40px 0; }
+    .callout h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 8px; }
+    .callout p { font-size: 0.875rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+    .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--plum); font-size: 0.875rem; font-weight: 600; text-decoration: none; margin-bottom: 32px; }
+    .back-link:hover { text-decoration: underline; }
+
+    footer { background: var(--ink); color: rgba(255,255,255,0.45); text-align: center; padding: 32px 5%; font-size: 0.8rem; margin-top: 40px; }
+    footer strong { color: var(--gold); }
+    footer a { color: rgba(255,255,255,0.45); }
+  </style>
+  <!-- ✅ Google Analytics — Replace G-XXXXXXXXXX with your Measurement ID -->
+  <!-- Get your ID at: analytics.google.com → Admin → Data Streams → Web -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Vibe <span>Compass</span></a>
+  <ul>
+    <li><a href="/#directory">Directory</a></li>
+    <li><a href="/neighborhoods/oakland.html">Oakland</a></li>
+    <li><a href="/" class="nav-cta">Back to Directory</a></li>
+  </ul>
+</nav>
+
+<div class="hero-guide">
+  <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1200&h=500&fit=crop&auto=format" alt="San Francisco Mission District" />
+  <div class="hero-guide-content">
+    <p class="breadcrumb"><a href="/">Vibe Compass</a> / Neighborhood Guides / SF Mission</p>
+    <h1>SF Mission District</h1>
+    <p>The cultural heart of San Francisco — Latinx taquerias, Arab-American bakeries, vegan izakayas, and murals on every wall.</p>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <a href="/" class="back-link">← Back to Full Directory</a>
+
+  <p class="intro">The Mission is the most culturally layered neighborhood in San Francisco, and also the most contested. Decades of Latinx history live in its taquerias, murals, corner stores, and community organizations — alongside newer waves of immigrants and residents who have added their own threads to the fabric. This guide focuses on the BIPOC-owned and BIPOC-rooted spots that make the Mission irreplaceable.</p>
+
+  <h2>Where to Eat</h2>
+  <p class="section-sub">The Mission has some of the most culturally significant BIPOC-owned restaurants in the entire Bay.</p>
+
+  <div class="spot-list">
+    <div class="spot">
+      <div class="spot-num">1</div>
+      <div class="spot-info">
+        <div class="spot-name">Taqueria El Farolito</div>
+        <div class="spot-meta"><span class="ownership-badge latinx-owned">Latinx-Owned</span> · Taqueria · 24th & Mission</div>
+        <p>A Mission District legend open until 3am most nights. Cash only. No frills. Just the best carne asada burrito in San Francisco, made by people who have been at it for decades. The kind of place that San Franciscans fiercely defend. Go late, go hungry, bring cash.</p>
+        <div class="spot-tags"><span class="tag">Mexican</span><span class="tag">Late Night</span><span class="tag">Cash Only</span><span class="tag">Latinx-Owned</span></div>
+      </div>
+    </div>
+    <div class="spot">
+      <div class="spot-num">2</div>
+      <div class="spot-info">
+        <div class="spot-name">Nopalito</div>
+        <div class="spot-meta"><span class="ownership-badge latinx-owned">Mexican-Owned</span> · Restaurant · Mission & Inner Sunset</div>
+        <p>Handmade, organic Mexican food rooted in the culinary traditions of Michoacán and Oaxaca. The masa is ground in-house. The tamales are exceptional. The pozole is the best in the city. Nopalito treats Mexican cuisine with the seriousness it deserves — no Tex-Mex shortcuts, just real regional cooking done beautifully.</p>
+        <div class="spot-tags"><span class="tag">Mexican</span><span class="tag">Organic</span><span class="tag">Brunch</span><span class="tag">Latinx-Owned</span></div>
+      </div>
+    </div>
+    <div class="spot">
+      <div class="spot-num">3</div>
+      <div class="spot-info">
+        <div class="spot-name">Shizen Vegan Sushi Bar & Izakaya</div>
+        <div class="spot-meta"><span class="ownership-badge asian-owned">Asian-Owned</span> · Restaurant · Mission District</div>
+        <p>Entirely vegan Japanese cuisine that has converted people who swore they could never eat vegan. Creative maki rolls built with seasonal vegetables and house-made proteins, rich broths, small plates, and an izakaya energy that is loud and joyful. The Shizen roll will make you forget there's no fish in it.</p>
+        <div class="spot-tags"><span class="tag">Japanese</span><span class="tag">Vegan</span><span class="tag">Sushi</span><span class="tag">Date Night</span></div>
+      </div>
+    </div>
+    <div class="spot">
+      <div class="spot-num">4</div>
+      <div class="spot-info">
+        <div class="spot-name">Pakwan Restaurant</div>
+        <div class="spot-meta"><span class="ownership-badge bipoc-owned">Pakistani-Owned</span> · Restaurant · Mission & Tenderloin</div>
+        <p>A San Francisco institution for halal Pakistani and Indian food. Enormous portions, impossibly reasonable prices, long steam trays of curries, daal, and biryani. A no-frills, full-flavor spot that has been feeding the city for decades. The naan is fresh and the curries are deeply seasoned. Bring cash.</p>
+        <div class="spot-tags"><span class="tag">Pakistani</span><span class="tag">Halal</span><span class="tag">Budget-Friendly</span><span class="tag">South Asian</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Cafés & Bakeries</h2>
+  <p class="section-sub">Two spots in the Mission that are doing something genuinely different with food and culture.</p>
+
+  <div class="spot-list">
+    <div class="spot">
+      <div class="spot-num">1</div>
+      <div class="spot-info">
+        <div class="spot-name">Reem's California</div>
+        <div class="spot-meta"><span class="ownership-badge bipoc-owned">Arab-American Owned</span> · Bakery & Café · Mission & Oakland</div>
+        <p>James Beard-nominated Arab-American bakery and community restaurant from chef Reem Assil. Freshly baked mana'eesh straight from the wood-burning oven, strong Arabic coffee, and a menu that centers Arab immigrant foodways with both pride and warmth. The za'atar mana'eesh alone is reason enough to visit. A model for what BIPOC-owned food businesses can become.</p>
+        <div class="spot-tags"><span class="tag">Middle Eastern</span><span class="tag">Bakery</span><span class="tag">Coffee</span><span class="tag">James Beard</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Culture & Art</h2>
+  <p class="section-sub">The Mission's murals and cultural organizations are as important as its restaurants.</p>
+
+  <div class="spot-list">
+    <div class="spot">
+      <div class="spot-num">1</div>
+      <div class="spot-info">
+        <div class="spot-name">Precita Eyes Muralists</div>
+        <div class="spot-meta"><span class="ownership-badge latinx-owned">Latinx-Led</span> · Arts Organization & Gallery · 24th Street</div>
+        <p>The organization behind the Mission's most iconic murals. Founded in 1977 by Susan and Luis Cervantes, Precita Eyes has painted over 700 murals in the Mission neighborhood alone. They offer walking mural tours that are among the best cultural experiences in San Francisco. The gallery and gift shop are also worth visiting. This is Latinx cultural history painted directly onto the walls of the city.</p>
+        <div class="spot-tags"><span class="tag">Art</span><span class="tag">Murals</span><span class="tag">Tours</span><span class="tag">Cultural History</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h3>The Mission is changing — these spots need your support.</h3>
+    <p>Gentrification has displaced thousands of Latinx residents and businesses from the Mission over the past two decades. Every time you eat at a Latinx-owned taqueria or shop at a community-owned business, you are making a choice about what kind of neighborhood the Mission stays. Spend intentionally. Tip generously. Come back.</p>
+  </div>
+
+  <div style="margin-top:48px; padding-top:32px; border-top:1px solid var(--border);">
+    <h2 style="font-size:1.1rem; margin-top:0; color:#6B5F52;">About This Guide</h2>
+    <p style="font-size:0.82rem; color:#8B7B6B; line-height:1.7; margin-top:8px;">
+      Vibe Compass is a Bay Area BIPOC business directory and city guide. This SF Mission guide highlights Latinx-owned restaurants in the Mission District, Arab-owned bakeries, Asian-owned restaurants, and BIPOC-centered cultural spaces across the 16th Street and 24th Street Mission corridors. <a href="/" style="color:var(--coral);">Browse the full Bay Area directory →</a>
+    </p>
+  </div>
+</div>
+
+<footer>
+  <p><strong>Vibe Compass</strong> · Bay Area BIPOC Business Guide</p>
+  <p style="margin-top:6px;">Curated with love for the community · <a href="mailto:hello@thevibecompass.com">hello@thevibecompass.com</a></p>
+</footer>
+
+</body>
+</html>
