@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Compass — Bay Area BIPOC Business Guide | Find Where the Culture Lives</title>
+  <meta name="description" content="Discover Black-owned, Asian-owned, Latinx-owned, and BIPOC-centered restaurants, cafés, shops, and experiences across the Bay Area. The guide that actually gets it." />
+  <link rel="canonical" href="https://thevibecompass.com" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vibe Compass — Bay Area BIPOC Guide" />
+  <meta property="og:description" content="Discover BIPOC-owned restaurants, shops, and experiences in the Bay Area. Curated by locals, for everyone." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thevibecompass.com" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&h=630&fit=crop" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Schema: Website + SearchAction -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Vibe Compass",
+    "url": "https://thevibecompass.com",
+    "description": "Bay Area BIPOC business directory and city guide — restaurants, cafés, shops, beauty, and culture centered on Black, Indigenous, and People of Color communities.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://thevibecompass.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:     #1A1209;
+      --cream:   #FFF8F0;
+      --gold:    #E8A838;
+      --coral:   #D4614A;
+      --plum:    #3B1F4E;
+      --sage:    #5C7C6B;
+      --card-bg: #FFFCF7;
+      --border:  #EDE8E0;
+      --tag-bg:  #F5EFE6;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: var(--plum); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 62px; }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--gold); text-decoration: none; letter-spacing: 0.02em; }
+    .nav-logo span { color: #fff; }
+    nav ul { list-style: none; display: flex; gap: 24px; align-items: center; }
+    nav ul a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    nav ul a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--ink) !important; padding: 8px 18px; border-radius: 100px; font-weight: 600 !important; }
+    .nav-cta:hover { background: #f0b840 !important; }
+    @media (max-width: 640px) { nav ul { display: none; } }
+
+    /* HERO */
+    .hero { background: var(--plum); color: #fff; text-align: center; padding: 88px 5% 96px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 60%, rgba(232,168,56,0.15), transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(212,97,74,0.12), transparent 50%); }
+    .hero-eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; position: relative; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.6rem, 6vw, 4.8rem); line-height: 1.08; margin-bottom: 20px; position: relative; }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.72); max-width: 520px; margin: 0 auto 38px; position: relative; }
+    .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .btn-primary { background: var(--gold); color: var(--ink); padding: 14px 28px; border-radius: 100px; font-weight: 600; font-size: 0.95rem; text-decoration: none; display: inline-block; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,168,56,0.35); }
+    .btn-ghost { border: 1.5px solid rgba(255,255,255,0.35); color: #fff; padding: 14px 28px; border-radius: 100px; font-weight: 500; font-size: 0.95rem; text-decoration: none; transition: border-color 0.2s; }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.7); }
+
+    /* STATS */
+    .stats { background: var(--ink); color: #fff; display: flex; justify-content: center; gap: 56px; padding: 22px 5%; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--gold); }
+    .stat-label { font-size: 0.76rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
+
+    /* SECTIONS */
+    section { padding: 64px 5%; }
+    .section-header { margin-bottom: 36px; }
+    .section-eyebrow { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--coral); margin-bottom: 8px; }
+    .section-header h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.2; }
+    .section-header p { color: #6B5F52; margin-top: 10px; max-width: 520px; }
+
+    /* SEARCH */
+    .search-wrap { position: relative; max-width: 580px; margin: 0 auto 28px; }
+    .search-icon { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 1rem; pointer-events: none; }
+    .search-bar { width: 100%; padding: 13px 20px 13px 46px; border: 2px solid var(--border); border-radius: 100px; font-family: 'Inter', sans-serif; font-size: 0.92rem; background: #fff; outline: none; transition: border-color 0.2s; }
+    .search-bar:focus { border-color: var(--plum); }
+
+    /* FILTERS */
+    .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .filter-pill { padding: 7px 16px; border-radius: 100px; border: 1.5px solid var(--border); font-size: 0.82rem; font-weight: 500; cursor: pointer; background: transparent; color: var(--ink); font-family: 'Inter', sans-serif; transition: all 0.18s; }
+    .filter-pill:hover { border-color: var(--plum); }
+    .filter-pill.active { background: var(--plum); border-color: var(--plum); color: #fff; }
+    .filter-label { font-size: 0.72rem; font-weight: 600; color: #aaa; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+    .results-info { font-size: 0.8rem; color: #9B8B7B; margin-bottom: 18px; }
+
+    /* FEATURED CARDS */
+    .featured-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.09); }
+    .card-img { height: 200px; position: relative; overflow: hidden; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .card:hover .card-img img { transform: scale(1.04); }
+    .card-img-placeholder { height: 200px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; position: relative; }
+    .card-img-placeholder.food   { background: linear-gradient(135deg, #5C1A0A, #D4614A); }
+    .card-img-placeholder.cafe   { background: linear-gradient(135deg, #2C1810, #8B5E3C); }
+    .card-img-placeholder.shop   { background: linear-gradient(135deg, #1F3A2E, #5C7C6B); }
+    .card-img-placeholder.bar    { background: linear-gradient(135deg, #1A0A3B, #6B3FA0); }
+    .card-img-placeholder.beauty { background: linear-gradient(135deg, #3B1038, #C06090); }
+    .card-img-placeholder.event  { background: linear-gradient(135deg, #1A2A0A, #6B8C3A); }
+    .featured-badge { position: absolute; top: 12px; left: 12px; background: var(--gold); color: var(--ink); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; z-index: 2; }
+    .card-body { padding: 20px; }
+    .card-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .card-category { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--coral); }
+    .dot { width: 3px; height: 3px; border-radius: 50%; background: #C0B0A0; }
+    .card-neighborhood { font-size: 0.76rem; color: #8B7B6B; }
+    .card h3 { font-family: 'DM Serif Display', serif; font-size: 1.22rem; margin-bottom: 8px; line-height: 1.3; }
+    .card p { font-size: 0.875rem; color: #6B5F52; line-height: 1.55; margin-bottom: 14px; }
+    .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .tag { background: var(--tag-bg); color: #5C4F42; font-size: 0.7rem; padding: 3px 10px; border-radius: 100px; border: 1px solid var(--border); }
+    .card-link { font-size: 0.85rem; font-weight: 600; color: var(--plum); text-decoration: none; }
+    .card-link:hover { text-decoration: underline; }
+
+    /* NEIGHBORHOOD GUIDES */
+    .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .guide-card { border-radius: 16px; overflow: hidden; position: relative; height: 210px; text-decoration: none; display: block; }
+    .guide-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s; display: block; }
+    .guide-card:hover img { transform: scale(1.05); }
+    .guide-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,18,9,0.78) 40%, rgba(0,0,0,0.15)); display: flex; flex-direction: column; justify-content: flex-end; padding: 22px; }
+    .guide-card h3 { font-family: 'DM Serif Display', serif; color: #fff; font-size: 1.35rem; margin-bottom: 4px; }
+    .guide-card p { color: rgba(255,255,255,0.72); font-size: 0.78rem; }
+    .guide-card .guide-arrow { color: var(--gold); font-size: 0.82rem; font-weight: 600; margin-top: 10px; }
+
+    /* DIRECTORY LIST */
+    .directory-list { display: flex; flex-direction: column; gap: 10px; }
+    .dir-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; gap: 16px; cursor: pointer; transition: box-shadow 0.18s, border-color 0.18s; }
+    .dir-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); border-color: #D8D0C8; }
+    .dir-icon { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; flex-shrink: 0; }
+    .dir-icon.food   { background: #FDEEE9; }
+    .dir-icon.cafe   { background: #F5EDE3; }
+    .dir-icon.shop   { background: #E8F2EC; }
+    .dir-icon.bar    { background: #EDE8F5; }
+    .dir-icon.beauty { background: #F5E8F2; }
+    .dir-icon.event  { background: #EBF5E8; }
+    .dir-info { flex: 1; min-width: 0; }
+    .dir-name { font-family: 'DM Serif Display', serif; font-size: 1rem; margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .dir-sub { font-size: 0.78rem; color: #8B7B6B; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .ownership-badge { font-size: 0.66rem; font-weight: 600; padding: 2px 8px; border-radius: 100px; white-space: nowrap; }
+    .black-owned   { background: #1A1209; color: #fff; }
+    .asian-owned   { background: #D4614A; color: #fff; }
+    .latinx-owned  { background: #5C7C6B; color: #fff; }
+    .bipoc-owned   { background: var(--plum); color: #fff; }
+    .dir-type { font-size: 0.76rem; color: #9B8B7B; white-space: nowrap; }
+    .no-results { text-align: center; color: #9B8B7B; padding: 48px 20px; font-size: 0.95rem; }
+
+    /* CURATED LISTS */
+    .lists-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+    .list-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 24px; text-decoration: none; color: var(--ink); transition: transform 0.2s, box-shadow 0.2s; display: block; }
+    .list-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+    .list-card-emoji { font-size: 2rem; margin-bottom: 14px; display: block; }
+    .list-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.08rem; margin-bottom: 8px; line-height: 1.3; }
+    .list-card p { font-size: 0.8rem; color: #6B5F52; line-height: 1.5; }
+    .list-card-arrow { font-size: 0.8rem; color: var(--coral); font-weight: 600; margin-top: 14px; display: block; }
+
+    /* EMAIL SIGNUP */
+    .email-signup { background: linear-gradient(135deg, #2A1238, var(--plum)); border-radius: 24px; padding: 64px 5%; text-align: center; color: #fff; margin: 0 2%; }
+    .email-signup .section-eyebrow { color: var(--gold); }
+    .email-signup h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 12px; }
+    .email-signup p { color: rgba(255,255,255,0.72); max-width: 460px; margin: 0 auto 32px; }
+    .email-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+    .email-input { flex: 1; padding: 13px 18px; border-radius: 100px; border: none; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; color: var(--ink); }
+    .email-btn { padding: 13px 22px; background: var(--gold); color: var(--ink); border: none; border-radius: 100px; font-weight: 600; font-size: 0.88rem; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+    .email-btn:hover { background: #f0b840; }
+    .email-fine { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin-top: 12px; }
+    @media (max-width: 480px) { .email-form { flex-direction: column; } .email-input, .email-btn { border-radius: 12px; width: 100%; } }
+
+    /* GET LISTED */
+    .get-listed { background: var(--plum); color: #fff; border-radius: 24px; padding: 64px 5%; text-align: center; margin: 0 2%; }
+    .get-listed .section-eyebrow { color: var(--gold); }
+    .get-listed h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); color: #fff; margin-bottom: 12px; }
+    .get-listed > p { color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto 36px; }
+    .listing-tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; max-width: 680px; margin: 0 auto 40px; text-align: left; }
+    .tier { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 16px; padding: 24px; }
+    .tier.featured-tier { border-color: var(--gold); background: rgba(232,168,56,0.1); }
+    .tier-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 6px; }
+    .tier.featured-tier .tier-label { color: var(--gold); }
+    .tier-price { font-family: 'DM Serif Display', serif; font-size: 2rem; color: #fff; }
+    .tier-price span { font-size: 0.88rem; font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.45); }
+    .tier ul { list-style: none; margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+    .tier ul li { font-size: 0.83rem; color: rgba(255,255,255,0.72); padding-left: 18px; position: relative; }
+    .tier ul li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); }
+    .get-listed-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* LISTING DETAIL MODAL */
+    .modal-overlay { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
+    .modal-overlay.open { display: flex; }
+    .modal { background: #fff; border-radius: 20px; width: 90%; max-width: 500px; max-height: 90vh; overflow-y: auto; position: relative; }
+    .modal-close { position: absolute; top: 16px; right: 18px; background: rgba(0,0,0,0.06); border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; color: #666; z-index: 2; display: flex; align-items: center; justify-content: center; }
+    .modal-photo { width: 100%; height: 210px; object-fit: cover; border-radius: 20px 20px 0 0; display: block; }
+    .modal-photo-placeholder { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; border-radius: 20px 20px 0 0; }
+    .modal-body { padding: 26px; }
+    .modal-body h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin: 10px 0 6px; }
+    .modal-body .modal-meta { font-size: 0.82rem; color: #8B7B6B; margin-bottom: 14px; }
+    .modal-body .modal-desc { font-size: 0.9rem; color: #4A3F34; line-height: 1.6; margin-bottom: 16px; }
+    .modal-body .modal-detail { font-size: 0.82rem; color: #8B7B6B; margin-bottom: 6px; }
+    .modal-actions { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+    .modal-actions a { padding: 10px 20px; border-radius: 100px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+    .modal-btn-primary { background: var(--plum); color: #fff; }
+    .modal-btn-primary:hover { background: #4d2968; }
+    .modal-btn-ghost { border: 1.5px solid var(--border); color: var(--ink); }
+    .modal-btn-ghost:hover { border-color: #aaa; }
+
+    /* SUBMIT FORM MODAL */
+    .form-modal { background: #fff; border-radius: 20px; padding: 40px; width: 90%; max-width: 500px; position: relative; max-height: 90vh; overflow-y: auto; }
+    .form-modal h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 6px; }
+    .form-modal > p { font-size: 0.875rem; color: #6B5F52; margin-bottom: 24px; }
+    .form-group { margin-bottom: 14px; }
+    label { display: block; font-size: 0.78rem; font-weight: 600; margin-bottom: 5px; color: var(--ink); }
+    input, select, textarea { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: var(--ink); background: var(--cream); outline: none; transition: border-color 0.2s; }
+    input:focus, select:focus, textarea:focus { border-color: var(--plum); }
+    textarea { resize: vertical; min-height: 84px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .submit-btn { width: 100%; padding: 13px; background: var(--plum); color: #fff; border: none; border-radius: 100px; font-size: 0.95rem; font-weight: 600; cursor: pointer; margin-top: 8px; transition: background 0.2s; font-family: 'Inter', sans-serif; }
+    .submit-btn:hover { background: #4d2968; }
+    @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+
+    /* FOOTER */
+    footer { background: var(--ink); color: rgba(255,255,255,0.45); padding: 40px 5%; }
+    .footer-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto auto; gap: 32px; align-items: start; }
+    .footer-brand { font-family: 'DM Serif Display', serif; color: var(--gold); font-size: 1.1rem; margin-bottom: 8px; }
+    .footer-tagline { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+    .footer-col h4 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 12px; }
+    .footer-col a { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom { text-align: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.76rem; }
+    @media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; } }
+
+    /* MISC */
+    .section-bg-alt { background: #FAF5EE; border-radius: 24px; margin: 0 2%; }
+    .view-all-wrap { text-align: center; margin-top: 28px; }
+    .view-all { font-size: 0.88rem; font-weight: 600; color: var(--plum); text-decoration: none; border: 1.5px solid var(--plum); padding: 10px 24px; border-radius: 100px; transition: all 0.2s; }
+    .view-all:hover { background: var(--plum); color: #fff; }
+  </style>
+  <!-- ✅ Google Analytics — Replace G-XXXXXXXXXX with your Measurement ID -->
+  <!-- Get your ID at: analytics.google.com → Admin → Data Streams → Web -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Vibe <span>Compass</span></a>
+  <ul>
+    <li><a href="#directory">Directory</a></li>
+    <li><a href="neighborhoods/oakland.html">Oakland</a></li>
+    <li><a href="neighborhoods/mission-sf.html">SF Mission</a></li>
+    <li><a href="#" class="nav-cta" onclick="openSubmitModal(); return false;">List Your Business</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Bay Area · BIPOC City Guide</p>
+  <h1>Find Where the<br><em>Culture</em> Lives</h1>
+  <p>The Bay Area guide for Black-owned, Asian-owned, Latinx-owned, and BIPOC-centered restaurants, shops, and experiences — curated by locals, for everyone.</p>
+  <div class="hero-actions">
+    <a href="#directory" class="btn-primary">Explore the Directory</a>
+    <a href="#" class="btn-ghost" onclick="openSubmitModal(); return false;">List Your Business</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">35+</div><div class="stat-label">Verified Listings</div></div>
+  <div class="stat"><div class="stat-num">6</div><div class="stat-label">Neighborhoods</div></div>
+  <div class="stat"><div class="stat-num">6</div><div class="stat-label">Categories</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">BIPOC-Centered</div></div>
+</div>
+
+<!-- FEATURED PICKS -->
+<section>
+  <div class="section-header">
+    <p class="section-eyebrow">Editor's Picks</p>
+    <h2>This Week's Featured Spots</h2>
+    <p>Handpicked by the Vibe Compass team — places worth knowing about right now.</p>
+  </div>
+  <div class="featured-grid" id="featured-grid"></div>
+</section>
+
+<!-- NEIGHBORHOOD GUIDES -->
+<section class="section-bg-alt">
+  <div class="section-header">
+    <p class="section-eyebrow">Neighborhood Guides</p>
+    <h2>Explore by Area</h2>
+    <p>Deep dives into the Bay's most vibrant BIPOC neighborhoods — history, highlights, and must-visit spots.</p>
+  </div>
+  <div class="guide-grid">
+    <a href="neighborhoods/oakland.html" class="guide-card">
+      <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=600&h=420&fit=crop&auto=format" alt="Oakland neighborhood guide" loading="lazy" />
+      <div class="guide-card-overlay">
+        <h3>Oakland</h3>
+        <p>Fruitvale, Temescal, Uptown & beyond</p>
+        <span class="guide-arrow">Explore the guide →</span>
+      </div>
+    </a>
+    <a href="neighborhoods/mission-sf.html" class="guide-card">
+      <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=600&h=420&fit=crop&auto=format" alt="SF Mission guide" loading="lazy" />
+      <div class="guide-card-overlay">
+        <h3>SF Mission</h3>
+        <p>The heartbeat of Latinx San Francisco</p>
+        <span class="guide-arrow">Explore the guide →</span>
+      </div>
+    </a>
+    <a href="neighborhoods/east-bay.html" class="guide-card">
+      <img src="https://images.unsplash.com/photo-1543807535-eceef0bc6599?w=600&h=420&fit=crop&auto=format" alt="East Bay guide" loading="lazy" />
+      <div class="guide-card-overlay">
+        <h3>East Bay</h3>
+        <p>Berkeley, Emeryville & the Tri-Valley</p>
+        <span class="guide-arrow">Explore the guide →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- FULL DIRECTORY -->
+<section id="directory">
+  <div class="section-header">
+    <p class="section-eyebrow">The Directory</p>
+    <h2>All Bay Area Spots</h2>
+    <p>Growing weekly. Know a spot we should add? <a href="#" onclick="openSubmitModal(); return false;" style="color:var(--coral);">Submit it here.</a></p>
+  </div>
+
+  <!-- Search -->
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input class="search-bar" type="text" id="search-input" placeholder="Search restaurants, neighborhoods, cuisine..." oninput="handleSearch()" />
+  </div>
+
+  <!-- Category filter -->
+  <div class="filter-label">Category</div>
+  <div class="filter-row" id="cat-filters">
+    <button class="filter-pill active" data-cat="all" onclick="setCategory(this)">All</button>
+    <button class="filter-pill" data-cat="food" onclick="setCategory(this)">🍽 Food</button>
+    <button class="filter-pill" data-cat="cafe" onclick="setCategory(this)">☕ Café</button>
+    <button class="filter-pill" data-cat="shop" onclick="setCategory(this)">🛍 Shop</button>
+    <button class="filter-pill" data-cat="bar" onclick="setCategory(this)">🍸 Bar</button>
+    <button class="filter-pill" data-cat="beauty" onclick="setCategory(this)">💅 Beauty</button>
+    <button class="filter-pill" data-cat="event" onclick="setCategory(this)">🎭 Events</button>
+  </div>
+
+  <!-- Neighborhood filter -->
+  <div class="filter-label" style="margin-top:16px;">Neighborhood</div>
+  <div class="filter-row" id="nbhood-filters">
+    <button class="filter-pill active" data-nbhood="all" onclick="setNeighborhood(this)">All Areas</button>
+    <button class="filter-pill" data-nbhood="oakland" onclick="setNeighborhood(this)">Oakland</button>
+    <button class="filter-pill" data-nbhood="sf-mission" onclick="setNeighborhood(this)">SF Mission</button>
+    <button class="filter-pill" data-nbhood="sf-bayview" onclick="setNeighborhood(this)">SF Bayview</button>
+    <button class="filter-pill" data-nbhood="emeryville" onclick="setNeighborhood(this)">Emeryville</button>
+    <button class="filter-pill" data-nbhood="berkeley" onclick="setNeighborhood(this)">Berkeley</button>
+    <button class="filter-pill" data-nbhood="fremont" onclick="setNeighborhood(this)">Fremont / South Bay</button>
+  </div>
+
+  <p class="results-info" id="results-info" style="margin-top:20px;"></p>
+  <div class="directory-list" id="directory-list"></div>
+</section>
+
+<!-- CURATED LISTS -->
+<section class="section-bg-alt">
+  <div class="section-header">
+    <p class="section-eyebrow">Curated Lists</p>
+    <h2>Collections Worth Bookmarking</h2>
+    <p>Handpicked guides for specific moods, occasions, and cravings.</p>
+  </div>
+  <div class="lists-grid">
+    <a href="lists/best-black-owned-restaurants-bay-area.html" class="list-card">
+      <span class="list-card-emoji">🍖</span>
+      <h3>Best Black-Owned Restaurants in the Bay Area</h3>
+      <p>From legacy BBQ spots to modern fine dining — 12 restaurants every food lover should know.</p>
+      <span class="list-card-arrow">Read the list →</span>
+    </a>
+    <a href="lists/bipoc-coffee-cafes-bay-area.html" class="list-card">
+      <span class="list-card-emoji">☕</span>
+      <h3>BIPOC-Owned Coffee Shops Worth the Drive</h3>
+      <p>Cafés that go beyond the cup — community, culture, and really good espresso.</p>
+      <span class="list-card-arrow">Read the list →</span>
+    </a>
+    <a href="lists/bipoc-date-night-bay-area.html" class="list-card">
+      <span class="list-card-emoji">🌙</span>
+      <h3>Date Night: BIPOC-Owned Spots That Deliver</h3>
+      <p>Wine bars, jazz clubs, and candlelit dinners — all BIPOC-owned, all Bay Area.</p>
+      <span class="list-card-arrow">Read the list →</span>
+    </a>
+    <a href="lists/hidden-gems-bay-area.html" class="list-card">
+      <span class="list-card-emoji">💎</span>
+      <h3>Hidden Gems: Under-the-Radar BIPOC Spots</h3>
+      <p>The spots locals know and tourists miss. No lines, just great food and real culture.</p>
+      <span class="list-card-arrow">Read the list →</span>
+    </a>
+  </div>
+</section>
+
+<!-- EMAIL SIGNUP -->
+<section>
+  <div class="email-signup">
+    <p class="section-eyebrow">Stay in the Loop</p>
+    <h2>The Weekly Vibe Guide</h2>
+    <p>New spots, neighborhood picks, BIPOC events, and the best of the Bay — every week in your inbox.</p>
+    <!-- ✅ BEEHIIV EMBED: Paste your Beehiiv embed code below.
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Compass — Bay Area BIPOC Business Guide | Find Where the Culture Lives</title>
+  <meta name="description" content="Discover Black-owned, Asian-owned, Latinx-owned, and BIPOC-centered restaurants, cafés, shops, and experiences across the Bay Area. The guide that actually gets it." />
+  <link rel="canonical" href="https://thevibecompass.com" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vibe Compass — Bay Area BIPOC Guide" />
+  <meta property="og:description" content="Discover BIPOC-owned restaurants, shops, and experiences in the Bay Area. Curated by locals, for everyone." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thevibecompass.com" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&h=630&fit=crop" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Schema: Website + SearchAction -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Vibe Compass",
+    "url": "https://thevibecompass.com",
+    "description": "Bay Area BIPOC business directory and city guide — restaurants, cafés, shops, beauty, and culture centered on Black, Indigenous, and People of Color communities.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://thevibecompass.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:     #1A1209;
+      --cream:   #FFF8F0;
+      --gold:    #E8A838;
+      --coral:   #D4614A;
+      --plum:    #3B1F4E;
+      --sage:    #5C7C6B;
+      --card-bg: #FFFCF7;
+      --border:  #EDE8E0;
+      --tag-bg:  #F5EFE6;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--plum); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 62px; }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--gold); text-decoration: none; letter-spacing: 0.02em; }
+    .nav-logo span { color: #fff; }
+    nav ul { list-style: none; display: flex; gap: 24px; align-items: center; }
+    nav ul a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    nav ul a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--ink) !important; padding: 8px 18px; border-radius: 100px; font-weight: 600 !important; }
+    .nav-cta:hover { background: #f0b840 !important; }
+    @media (max-width: 640px) { nav ul { display: none; } }
+    .hero { background: var(--plum); color: #fff; text-align: center; padding: 88px 5% 96px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 60%, rgba(232,168,56,0.15), transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(212,97,74,0.12), transparent 50%); }
+    .hero-eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; position: relative; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.6rem, 6vw, 4.8rem); line-height: 1.08; margin-bottom: 20px; position: relative; }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.72); max-width: 520px; margin: 0 auto 38px; position: relative; }
+    .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .btn-primary { background: var(--gold); color: var(--ink); padding: 14px 28px; border-radius: 100px; font-weight: 600; font-size: 0.95rem; text-decoration: none; display: inline-block; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,168,56,0.35); }
+    .btn-ghost { border: 1.5px solid rgba(255,255,255,0.35); color: #fff; padding: 14px 28px; border-radius: 100px; font-weight: 500; font-size: 0.95rem; text-decoration: none; transition: border-color 0.2s; }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.7); }
+    .stats { background: var(--ink); color: #fff; display: flex; justify-content: center; gap: 56px; padding: 22px 5%; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--gold); }
+    .stat-label { font-size: 0.76rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
+    section { padding: 64px 5%; }
+    .section-header { margin-bottom: 36px; }
+    .section-eyebrow { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--coral); margin-bottom: 8px; }
+    .section-header h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.2; }
+    .section-header p { color: #6B5F52; margin-top: 10px; max-width: 520px; }
+    .search-wrap { position: relative; max-width: 580px; margin: 0 auto 28px; }
+    .search-icon { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 1rem; pointer-events: none; }
+    .search-bar { width: 100%; padding: 13px 20px 13px 46px; border: 2px solid var(--border); border-radius: 100px; font-family: 'Inter', sans-serif; font-size: 0.92rem; background: #fff; outline: none; transition: border-color 0.2s; }
+    .search-bar:focus { border-color: var(--plum); }
+    .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .filter-pill { padding: 7px 16px; border-radius: 100px; border: 1.5px solid var(--border); font-size: 0.82rem; font-weight: 500; cursor: pointer; background: transparent; color: var(--ink); font-family: 'Inter', sans-serif; transition: all 0.18s; }
+    .filter-pill:hover { border-color: var(--plum); }
+    .filter-pill.active { background: var(--plum); border-color: var(--plum); color: #fff; }
+    .filter-label { font-size: 0.72rem; font-weight: 600; color: #aaa; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+    .results-info { font-size: 0.8rem; color: #9B8B7B; margin-bottom: 18px; }
+    .featured-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.09); }
+    .card-img { height: 200px; position: relative; overflow: hidden; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .card:hover .card-img img { transform: scale(1.04); }
+    .card-img-placeholder { height: 200px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; position: relative; }
+    .card-img-placeholder.food   { background: linear-gradient(135deg, #5C1A0A, #D4614A); }
+    .card-img-placeholder.cafe   { background: linear-gradient(135deg, #2C1810, #8B5E3C); }
+    .card-img-placeholder.shop   { background: linear-gradient(135deg, #1F3A2E, #5C7C6B); }
+    .card-img-placeholder.bar    { background: linear-gradient(135deg, #1A0A3B, #6B3FA0); }
+    .card-img-placeholder.beauty { background: linear-gradient(135deg, #3B1038, #C06090); }
+    .card-img-placeholder.event  { background: linear-gradient(135deg, #1A2A0A, #6B8C3A); }
+    .featured-badge { position: absolute; top: 12px; left: 12px; background: var(--gold); color: var(--ink); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; z-index: 2; }
+    .card-body { padding: 20px; }
+    .card-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .card-category { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--coral); }
+    .dot { width: 3px; height: 3px; border-radius: 50%; background: #C0B0A0; }
+    .card-neighborhood { font-size: 0.76rem; color: #8B7B6B; }
+    .card h3 { font-family: 'DM Serif Display', serif; font-size: 1.22rem; margin-bottom: 8px; line-height: 1.3; }
+    .card p { font-size: 0.875rem; color: #6B5F52; line-height: 1.55; margin-bottom: 14px; }
+    .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .tag { background: var(--tag-bg); color: #5C4F42; font-size: 0.7rem; padding: 3px 10px; border-radius: 100px; border: 1px solid var(--border); }
+    .card-link { font-size: 0.85rem; font-weight: 600; color: var(--plum); text-decoration: none; }
+    .card-link:hover { text-decoration: underline; }
+    .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .guide-card { border-radius: 16px; overflow: hidden; position: relative; height: 210px; text-decoration: none; display: block; }
+    .guide-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s; display: block; }
+    .guide-card:hover img { transform: scale(1.05); }
+    .guide-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,18,9,0.78) 40%, rgba(0,0,0,0.15)); display: flex; flex-direction: column; justify-content: flex-end; padding: 22px; }
+    .guide-card h3 { font-family: 'DM Serif Display', serif; color: #fff; font-size: 1.35rem; margin-bottom: 4px; }
+    .guide-card p { color: rgba(255,255,255,0.72); font-size: 0.78rem; }
+    .guide-card .guide-arrow { color: var(--gold); font-size: 0.82rem; font-weight: 600; margin-top: 10px; }
+    .directory-list { display: flex; flex-direction: column; gap: 10px; }
+    .dir-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; gap: 16px; cursor: pointer; transition: box-shadow 0.18s, border-color 0.18s; }
+    .dir-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); border-color: #D8D0C8; }
+    .dir-icon { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; flex-shrink: 0; }
+    .dir-icon.food   { background: #FDEEE9; }
+    .dir-icon.cafe   { background: #F5EDE3; }
+    .dir-icon.shop   { background: #E8F2EC; }
+    .dir-icon.bar    { background: #EDE8F5; }
+    .dir-icon.beauty { background: #F5E8F2; }
+    .dir-icon.event  { background: #EBF5E8; }
+    .dir-info { flex: 1; min-width: 0; }
+    .dir-name { font-family: 'DM Serif Display', serif; font-size: 1rem; margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .dir-sub { font-size: 0.78rem; color: #8B7B6B; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .ownership-badge { font-size: 0.66rem; font-weight: 600; padding: 2px 8px; border-radius: 100px; white-space: nowrap; }
+    .black-owned   { background: #1A1209; color: #fff; }
+    .asian-owned   { background: #D4614A; color: #fff; }
+    .latinx-owned  { background: #5C7C6B; color: #fff; }
+    .bipoc-owned   { background: var(--plum); color: #fff; }
+    .dir-type { font-size: 0.76rem; color: #9B8B7B; white-space: nowrap; }
+    .no-results { text-align: center; color: #9B8B7B; padding: 48px 20px; font-size: 0.95rem; }
+    .lists-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+    .list-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 24px; text-decoration: none; color: var(--ink); transition: transform 0.2s, box-shadow 0.2s; display: block; }
+    .list-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+    .list-card-emoji { font-size: 2rem; margin-bottom: 14px; display: block; }
+    .list-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.08rem; margin-bottom: 8px; line-height: 1.3; }
+    .list-card p { font-size: 0.8rem; color: #6B5F52; line-height: 1.5; }
+    .list-card-arrow { font-size: 0.8rem; color: var(--coral); font-weight: 600; margin-top: 14px; display: block; }
+    .email-signup { background: linear-gradient(135deg, #2A1238, var(--plum)); border-radius: 24px; padding: 64px 5%; text-align: center; color: #fff; margin: 0 2%; }
+    .email-signup .section-eyebrow { color: var(--gold); }
+    .email-signup h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 12px; }
+    .email-signup p { color: rgba(255,255,255,0.72); max-width: 460px; margin: 0 auto 32px; }
+    .email-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+    .email-input { flex: 1; padding: 13px 18px; border-radius: 100px; border: none; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; color: var(--ink); }
+    .email-btn { padding: 13px 22px; background: var(--gold); color: var(--ink); border: none; border-radius: 100px; font-weight: 600; font-size: 0.88rem; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+    .email-btn:hover { background: #f0b840; }
+    .email-fine { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin-top: 12px; }
+    @media (max-width: 480px) { .email-form { flex-direction: column; } .email-input, .email-btn { border-radius: 12px; width: 100%; } }
+    .get-listed { background: var(--plum); color: #fff; border-radius: 24px; padding: 64px 5%; text-align: center; margin: 0 2%; }
+    .get-listed .section-eyebrow { color: var(--gold); }
+    .get-listed h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); color: #fff; margin-bottom: 12px; }
+    .get-listed > p { color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto 36px; }
+    .listing-tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; max-width: 680px; margin: 0 auto 40px; text-align: left; }
+    .tier { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 16px; padding: 24px; }
+    .tier.featured-tier { border-color: var(--gold); background: rgba(232,168,56,0.1); }
+    .tier-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 6px; }
+    .tier.featured-tier .tier-label { color: var(--gold); }
+    .tier-price { font-family: 'DM Serif Display', serif; font-size: 2rem; color: #fff; }
+    .tier-price span { font-size: 0.88rem; font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.45); }
+    .tier ul { list-style: none; margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+    .tier ul li { font-size: 0.83rem; color: rgba(255,255,255,0.72); padding-left: 18px; position: relative; }
+    .tier ul li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); }
+    .get-listed-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .modal-overlay { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
+    .modal-overlay.open { display: flex; }
+    .modal { background: #fff; border-radius: 20px; width: 90%; max-width: 500px; max-height: 90vh; overflow-y: auto; position: relative; }
+    .modal-close { position: absolute; top: 16px; right: 18px; background: rgba(0,0,0,0.06); border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; color: #666; z-index: 2; display: flex; align-items: center; justify-content: center; }
+    .modal-photo { width: 100%; height: 210px; object-fit: cover; border-radius: 20px 20px 0 0; display: block; }
+    .modal-photo-placeholder { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; border-radius: 20px 20px 0 0; }
+    .modal-body { padding: 26px; }
+    .modal-body h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin: 10px 0 6px; }
+    .modal-body .modal-meta { font-size: 0.82rem; color: #8B7B6B; margin-bottom: 14px; }
+    .modal-body .modal-desc { font-size: 0.9rem; color: #4A3F34; line-height: 1.6; margin-bottom: 16px; }
+    .modal-body .modal-detail { font-size: 0.82rem; color: #8B7B6B; margin-bottom: 6px; }
+    .modal-actions { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+    .modal-actions a { padding: 10px 20px; border-radius: 100px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+    .modal-btn-primary { background: var(--plum); color: #fff; }
+    .modal-btn-primary:hover { background: #4d2968; }
+    .modal-btn-ghost { border: 1.5px solid var(--border); color: var(--ink); }
+    .modal-btn-ghost:hover { border-color: #aaa; }
+    .form-modal { background: #fff; border-radius: 20px; padding: 40px; width: 90%; max-width: 500px; position: relative; max-height: 90vh; overflow-y: auto; }
+    .form-modal h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 6px; }
+    .form-modal > p { font-size: 0.875rem; color: #6B5F52; margin-bottom: 24px; }
+    .form-group { margin-bottom: 14px; }
+    label { display: block; font-size: 0.78rem; font-weight: 600; margin-bottom: 5px; color: var(--ink); }
+    input, select, textarea { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: var(--ink); background: var(--cream); outline: none; transition: border-color 0.2s; }
+    input:focus, select:focus, textarea:focus { border-color: var(--plum); }
+    textarea { resize: vertical; min-height: 84px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .submit-btn { width: 100%; padding: 13px; background: var(--plum); color: #fff; border: none; border-radius: 100px; font-size: 0.95rem; font-weight: 600; cursor: pointer; margin-top: 8px; transition: background 0.2s; font-family: 'Inter', sans-serif; }
+    .submit-btn:hover { background: #4d2968; }
+    @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+    footer { background: var(--ink); color: rgba(255,255,255,0.45); padding: 40px 5%; }
+    .footer-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto auto; gap: 32px; align-items: start; }
+    .footer-brand { font-family: 'DM Serif Display', serif; color: var(--gold); font-size: 1.1rem; margin-bottom: 8px; }
+    .footer-tagline { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+    .footer-col h4 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 12px; }
+    .footer-col a { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom { text-align: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.76rem; }
+    @media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; } }
+    .section-bg-alt { background: #FAF5EE; border-radius: 24px; margin: 0 2%; }
+    .view-all-wrap { text-align: center; margin-top: 28px; }
+    .view-all { font-size: 0.88rem; font-weight: 600; color: var(--plum); text-decoration: none; border: 1.5px solid var(--plum); padding: 10px 24px; border-radius: 100px; transition: all 0.2s; }
+    .view-all:hover { background: var(--plum); color: #fff; }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Vibe <span>Compass</span></a>
+  <ul>
+    <li><a href="#directory">Directory</a></li>
+    <li><a href="neighborhoods/oakland.html">Oakland</a></li>
+    <li><a href="neighborhoods/mission-sf.html">SF Mission</a></li>
+    <li><a href="#" class="nav-cta" onclick="openSubmitModal(); return false;">List Your Business</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <p class="hero-eyebrow">Bay Area · BIPOC City Guide</p>
+  <h1>Find Where the<br><em>Culture</em> Lives</h1>
+  <p>The Bay Area guide for Black-owned, Asian-owned, Latinx-owned, and BIPOC-centered restaurants, shops, and experiences — curated by locals, for everyone.</p>
+  <div class="hero-actions">
+    <a href="#directory" class="btn-primary">Explore the Directory</a>
+    <a href="#" class="btn-ghost" onclick="openSubmitModal(); return false;">List Your Business</a>
+  </div>
+</section>
+<div class="stats">
+  <div class="stat"><div class="stat-num">35+</div><div class="stat-label">Verified Listings</div></div>
+  <div class="stat"><div class="stat-num">6</div><div class="stat-label">Neighborhoods</div></div>
+  <div class="stat"><div class="stat-num">6</div><div class="stat-label">Categories</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">BIPOC-Centered</div></div>
+</div>
+<!-- FEATURED PICKS -->
+<section>
+  <div class="section-header">
+    <p class="section-eyebrow">Editor's Picks</p>
+    <h2>This Week's Featured Spots</h2>
+    <p>Handpicked by the Vibe Compass team — places worth knowing about right now.</p>
+  </div>
+  <div class="featured-grid" id="featured-grid"></div>
+</section>
+
+<!-- NEIGHBORHOOD GUIDES -->
+<section class="section-bg-alt">
+  <div class="section-header">
+    <p class="section-eyebrow">Neighborhood Guides</p>
+    <h2>Explore by Area</h2>
+    <p>Deep dives into the Bay's most vibrant BIPOC neighborhoods — history, highlights, and must-visit spots.</p>
+  </div>
+  <div class="guide-grid">
+    <a href="neighborhoods/oakland.html" class="guide-card">
+      <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=600&h=420&fit=crop&auto=format" alt="Oakland neighborhood guide" loading="lazy" />
+      <div class="guide-card-overlay">
+        <h3>Oakland</h3>
+        <p>Fruitvale, Temescal, Uptown & beyond</p>
+        <span class="guide-arrow">Explore the guide →</span>
+      </div>
+    </a>
+    <a href="neighborhoods/mission-sf.html" class="guide-card">
+      <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=600&h=420&fit=crop&auto=format" alt="SF Mission guide" loading="lazy" />
+      <div class="guide-card-overlay">
+        <h3>SF Mission</h3>
+        <p>The heartbeat of Latinx San Francisco</p>
+        <span class="guide-arrow">Explore the guide →</span>
+      </div>
+    </a>
+    <a href="neighborhoods/east-bay.html" class="guide-card">
+      <img src="https://images.unsplash.com/photo-1543807535-eceef0bc6599?w=600&h=420&fit=crop&auto=format" alt="East Bay guide" loading="lazy" />
+      <div class="guide-card-overlay">
+        <h3>East Bay</h3>
+        <p>Berkeley, Emeryville & the Tri-Valley</p>
+        <span class="guide-arrow">Explore the guide →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- FULL DIRECTORY -->
+<section id="directory">
+  <div class="section-header">
+    <p class="section-eyebrow">The Directory</p>
+    <h2>All Bay Area Spots</h2>
+    <p>Growing weekly. Know a spot we should add? <a href="#" onclick="openSubmitModal(); return false;" style="color:var(--coral);">Submit it here.</a></p>
+  </div>
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input class="search-bar" type="text" id="search-input" placeholder="Search restaurants, neighborhoods, cuisine..." oninput="handleSearch()" />
+  </div>
+  <div class="filter-label">Category</div>
+  <div class="filter-row" id="cat-filters">
+    <button class="filter-pill active" data-cat="all" onclick="setCategory(this)">All</button>
+    <button class="filter-pill" data-cat="food" onclick="setCategory(this)">🍽 Food</button>
+    <button class="filter-pill" data-cat="cafe" onclick="setCategory(this)">☕ Café</button>
+    <button class="filter-pill" data-cat="shop" onclick="setCategory(this)">🛍 Shop</button>
+    <button class="filter-pill" data-cat="bar" onclick="setCategory(this)">🍸 Bar</button>
+    <button class="filter-pill" data-cat="beauty" onclick="setCategory(this)">💅 Beauty</button>
+    <button class="filter-pill" data-cat="event" onclick="setCategory(this)">🎭 Events</button>
+  </div>
+  <div class="filter-label" style="margin-top:16px;">Neighborhood</div>
+  <div class="filter-row" id="nbhood-filters">
+    <button class="filter-pill active" data-nbhood="all" onclick="setNeighborhood(this)">All Areas</button>
+    <button class="filter-pill" data-nbhood="oakland" onclick="setNeighborhood(this)">Oakland</button>
+    <button class="filter-pill" data-nbhood="sf-mission" onclick="setNeighborhood(this)">SF Mission</button>
+    <button class="filter-pill" data-nbhood="sf-bayview" onclick="setNeighborhood(this)">SF Bayview</button>
+    <button class="filter-pill" data-nbhood="emeryville" onclick="setNeighborhood(this)">Emeryville</button>
+    <button class="filter-pill" data-nbhood="berkeley" onclick="setNeighborhood(this)">Berkeley</button>
+    <button class="filter-pill" data-nbhood="fremont" onclick="setNeighborhood(this)">Fremont / South Bay</button>
+  </div>
+  <p class="results-info" id="results-info" style="margin-top:20px;"></p>
+  <div class="directory-list" id="directory-list"></div>
+</section>
+
+<!-- CURATED LISTS -->
+<section class="section-bg-alt">
+  <div class="section-header">
+    <p class="section-eyebrow">Curated Lists</p>
+    <h2>Collections Worth Bookmarking</h2>
+    <p>Handpicked guides for specific moods, occasions, and cravings.</p>
+  </div>
+  <div class="lists-grid">
+    <a href="lists/best-black-owned-restaurants-bay-area.html" class="list-card">
+      <span class="list-card-emoji">🍖</span>
+      <h3>Best Black-Owned Restaurants in the Bay Area</h3>
+      <p>From legacy BBQ spots to modern fine dining — 12 restaurants every food lover should know.</p>
+      <span class="list-card-arrow">Read the list →</span>
+    </a>
+    <a href="lists/bipoc-coffee-cafes-bay-area.html" class="list-card">
+      <span class="list-card-emoji">☕</span>
+      <h3>BIPOC-Owned Coffee Shops Worth the Drive</h3>
+      <p>Cafés that go beyond the cup — community, culture, and really good espresso.</p>
+      <span class="list-card-arrow">Read the list →</span>
+    </a>
+    <a href="lists/bipoc-date-night-bay-area.html" class="list-card">
+      <span class="list-card-emoji">🌙</span>
+      <h3>Date Night: BIPOC-Owned Spots That Deliver</h3>
+      <p>Wine bars, jazz clubs, and candlelit dinners — all BIPOC-owned, all Bay Area.</p>
+      <span class="list-card-arrow">Read the list →</span>
+    </a>
+    <a href="lists/hidden-gems-bay-area.html" class="list-card">
+      <span class="list-card-emoji">💎</span>
+      <h3>Hidden Gems: Under-the-Radar BIPOC Spots</h3>
+      <p>The spots locals know and tourists miss. No lines, just great food and real culture.</p>
+      <span class="list-card-arrow">Read the list →</span>
+    </a>
+  </div>
+</section>
+
+<!-- EMAIL SIGNUP -->
+<section>
+  <div class="email-signup">
+    <p class="section-eyebrow">Stay in the Loop</p>
+    <h2>The Weekly Vibe Guide</h2>
+    <p>New spots, neighborhood picks, BIPOC events, and the best of the Bay — every week in your inbox.</p>
+    <div class="beehiiv-embed" id="beehiiv-form">
+      <form class="email-form" onsubmit="handleEmailSignup(event)">
+        <input class="email-input" type="email" name="email" placeholder="your@email.com" required />
+        <button class="email-btn" type="submit">Get the Guide</button>
+      </form>
+    </div>
+    <p class="email-fine">No spam. One email a week. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<!-- GET LISTED -->
+<section id="list-your-business">
+  <div class="get-listed">
+    <p class="section-eyebrow">For Business Owners</p>
+    <h2>Get Your Business on the Map</h2>
+    <p>Join the directory building real visibility for BIPOC-owned businesses in the Bay Area. Free to list. Featured spots get priority placement, a dedicated profile, and promotion across our channels.</p>
+    <div class="listing-tiers">
+      <div class="tier">
+        <div class="tier-label">Basic Listing</div>
+        <div class="tier-price">Free</div>
+        <ul>
+          <li>Listed in the directory</li>
+          <li>Business name & category</li>
+          <li>Neighborhood tag</li>
+          <li>Ownership badge</li>
+          <li>Searchable & filterable</li>
+        </ul>
+      </div>
+      <div class="tier featured-tier">
+        <div class="tier-label">⭐ Featured</div>
+        <div class="tier-price">$75<span>/mo</span></div>
+        <ul>
+          <li>Top placement in directory</li>
+          <li>Photo + description card</li>
+          <li>IG + newsletter features</li>
+          <li>Google Maps pin</li>
+          <li>Priority onboarding</li>
+        </ul>
+      </div>
+    </div>
+    <div class="get-listed-actions">
+      <a href="#" class="btn-primary" onclick="openSubmitModal(); return false;">Submit Your Business</a>
+      <a href="mailto:hello@thevibecompass.com" class="btn-ghost" style="border-color:rgba(255,255,255,0.35);color:#fff;">Questions? Email Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Vibe Compass</div>
+      <div class="footer-tagline">Bay Area BIPOC city guide</div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="#directory">Directory</a>
+      <a href="neighborhoods/oakland.html">Oakland Guide</a>
+      <a href="neighborhoods/mission-sf.html">SF Mission Guide</a>
+      <a href="lists/best-black-owned-restaurants-bay-area.html">Top Lists</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="https://www.instagram.com/thevibecompassbay" target="_blank">Instagram</a>
+      <a href="#" onclick="openSubmitModal(); return false;">List Your Business</a>
+      <a href="mailto:hello@thevibecompass.com">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Vibe Compass · Built with love for BIPOC communities · <a href="mailto:hello@thevibecompass.com" style="color:var(--gold);">hello@thevibecompass.com</a></div>
+</footer>
+
+<!-- LISTING DETAIL MODAL -->
+<div class="modal-overlay" id="detail-modal" onclick="closeDetailModal(event)">
+  <div class="modal" id="detail-content"></div>
+</div>
+
+<!-- SUBMIT MODAL -->
+<div class="modal-overlay" id="submit-modal" onclick="closeSubmitModal(event)">
+  <div class="form-modal">
+    <button class="modal-close" onclick="closeSubmitModal()">×</button>
+    <h3>List Your Business</h3>
+    <p>Free basic listings. Featured spots get priority placement + newsletter promotion. We'll be in touch within 48 hours.</p>
+    <form id="listing-form" onsubmit="handleSubmitForm(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Business Name *</label>
+          <input type="text" name="business_name" placeholder="e.g. The Good Kitchen" required />
+        </div>
+        <div class="form-group">
+          <label>Category *</label>
+          <select name="category" required>
+            <option value="">Select...</option>
+            <option>Restaurant / Food</option>
+            <option>Café / Coffee</option>
+            <option>Bar / Nightlife</option>
+            <option>Shop / Retail</option>
+            <option>Beauty / Salon</option>
+            <option>Events / Entertainment</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Neighborhood / City *</label>
+          <input type="text" name="neighborhood" placeholder="e.g. Oakland, Fruitvale" required />
+        </div>
+        <div class="form-group">
+          <label>Ownership *</label>
+          <select name="ownership" required>
+            <option value="">Select...</option>
+            <option>Black-Owned</option>
+            <option>Asian-Owned</option>
+            <option>Latinx-Owned</option>
+            <option>Indigenous-Owned</option>
+            <option>Multi-Owner BIPOC</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Short Description</label>
+        <textarea name="description" placeholder="Tell us what makes your spot special (2–3 sentences)..."></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Website or Instagram</label>
+          <input type="text" name="website" placeholder="@yourhandle or website.com" />
+        </div>
+        <div class="form-group">
+          <label>Your Email *</label>
+          <input type="email" name="email" placeholder="you@email.com" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Listing Type</label>
+        <select name="listing_type">
+          <option>Free Basic Listing</option>
+          <option>Featured Listing — $75/month</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">Submit My Business →</button>
+    </form>
+  </div>
+</div>
+
+<script>
+let listings = [];
+let activeCategory = 'all';
+let activeNeighborhood = 'all';
+let searchQuery = '';
+
+function getFiltered() {
+  return listings.filter(l => {
+    const matchCat   = activeCategory === 'all' || l.category === activeCategory;
+    const matchNhood = activeNeighborhood === 'all' || l.neighborhood === activeNeighborhood;
+    const q = searchQuery.toLowerCase();
+    const matchSearch = !q ||
+      l.name.toLowerCase().includes(q) ||
+      l.description.toLowerCase().includes(q) ||
+      (l.tags && l.tags.some(t => t.toLowerCase().includes(q))) ||
+      l.neighborhoodLabel.toLowerCase().includes(q) ||
+      l.ownershipLabel.toLowerCase().includes(q);
+    return matchCat && matchNhood && matchSearch;
+  });
+}
+
+function setCategory(el) {
+  activeCategory = el.dataset.cat;
+  document.querySelectorAll('#cat-filters .filter-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  renderDirectory();
+}
+function setNeighborhood(el) {
+  activeNeighborhood = el.dataset.nbhood;
+  document.querySelectorAll('#nbhood-filters .filter-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  renderDirectory();
+}
+function handleSearch() {
+  searchQuery = document.getElementById('search-input').value;
+  renderDirectory();
+}
+
+function ownershipClass(o) {
+  return o.replace('-owned','').replace('bipoc','bipoc') + (o.endsWith('-owned') ? '-owned' : '');
+}
+
+function renderFeatured() {
+  const featured = listings.filter(l => l.featured);
+  document.getElementById('featured-grid').innerHTML = featured.map(l => `
+    <div class="card" onclick="openDetail('${l.id}')">
+      <div class="card-img">
+        <span class="featured-badge">⭐ Featured</span>
+        <img src="${l.photo}" alt="${l.name}" loading="lazy" />
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="card-category">${l.type}</span>
+          <span class="dot"></span>
+          <span class="card-neighborhood">${l.neighborhoodLabel}</span>
+        </div>
+        <h3>${l.name}</h3>
+        <p>${l.description.substring(0, 120)}...</p>
+        <div class="card-tags">${(l.tags||[]).slice(0,3).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        <span class="card-link">View listing →</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderDirectory() {
+  const filtered = getFiltered();
+  const nonFeatured = filtered.filter(l => !l.featured);
+  const all = [...filtered.filter(l => l.featured), ...nonFeatured];
+
+  document.getElementById('results-info').textContent =
+    all.length === listings.length ? `Showing all ${all.length} spots` : `${all.length} spot${all.length !== 1 ? 's' : ''} found`;
+
+  if (all.length === 0) {
+    document.getElementById('directory-list').innerHTML = `<div class="no-results">No spots found. <a href="#" onclick="resetFilters(); return false;" style="color:var(--coral);">Reset filters</a>.</div>`;
+    return;
+  }
+
+  document.getElementById('directory-list').innerHTML = all.map(l => `
+    <div class="dir-item" onclick="openDetail('${l.id}')">
+      <div class="dir-icon ${l.category}">${l.emoji}</div>
+      <div class="dir-info">
+        <div class="dir-name">${l.name}</div>
+        <div class="dir-sub">
+          ${l.type} · ${l.neighborhoodLabel}
+          <span class="dot"></span>
+          <span class="ownership-badge ${l.ownership}">${l.ownershipLabel}</span>
+        </div>
+      </div>
+      <div class="dir-type">${l.category === 'food' ? 'Restaurant' : l.type.split(' ')[0]}</div>
+    </div>
+  `).join('');
+}
+
+function resetFilters() {
+  activeCategory = 'all'; activeNeighborhood = 'all'; searchQuery = '';
+  document.getElementById('search-input').value = '';
+  document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+  document.querySelector('[data-cat="all"]').classList.add('active');
+  document.querySelector('[data-nbhood="all"]').classList.add('active');
+  renderDirectory();
+}
+
+function openDetail(id) {
+  const l = listings.find(x => x.id === id);
+  if (!l) return;
+  const photoHtml = l.photo
+    ? `<img class="modal-photo" src="${l.photo}" alt="${l.name}" />`
+    : `<div class="modal-photo-placeholder card-img-placeholder ${l.category}">${l.emoji}</div>`;
+
+  document.getElementById('detail-content').innerHTML = `
+    ${photoHtml}
+    <div class="modal-body">
+      <button class="modal-close" onclick="closeDetailModal()">×</button>
+      <span class="ownership-badge ${l.ownership}">${l.ownershipLabel}</span>
+      <h3>${l.name}</h3>
+      <p class="modal-meta">${l.type} · ${l.neighborhoodLabel}</p>
+      <p class="modal-desc">${l.description}</p>
+      ${l.address ? `<p class="modal-detail">📍 ${l.address}</p>` : ''}
+      <div class="card-tags" style="margin-top:14px;">${(l.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      <div class="modal-actions">
+        <a href="https://maps.google.com?q=${encodeURIComponent(l.name + ' ' + l.neighborhoodLabel)}" target="_blank" class="modal-btn-primary">Get Directions →</a>
+        <a href="#" onclick="closeDetailModal(); openSubmitModal(); return false;" class="modal-btn-ghost">Update Info</a>
+      </div>
+    </div>`;
+  document.getElementById('detail-modal').classList.add('open');
+}
+
+function closeDetailModal(e) {
+  if (!e || e.target === document.getElementById('detail-modal')) {
+    document.getElementById('detail-modal').classList.remove('open');
+  }
+}
+
+function openSubmitModal() { document.getElementById('submit-modal').classList.add('open'); }
+function closeSubmitModal(e) {
+  if (!e || e.target === document.getElementById('submit-modal')) {
+    document.getElementById('submit-modal').classList.remove('open');
+  }
+}
+
+async function handleSubmitForm(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type=submit]');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+  const data = Object.fromEntries(new FormData(form).entries());
+  const AIRTABLE_WRITE_TOKEN = "YOUR_WRITE_ONLY_PAT_HERE";
+  try {
+    const resp = await fetch("https://api.airtable.com/v0/appPlwjJooRNdfWAR/tbl0CMaqSyIc1I9F9", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${AIRTABLE_WRITE_TOKEN}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        records: [{
+          fields: {
+            "Business Name": data.business_name || "",
+            "Category": data.category || "",
+            "Neighborhood/City": data.neighborhood || "",
+            "Ownership": data.ownership || "",
+            "Description": data.description || "",
+            "Website or Instagram": data.website || "",
+            "Contact Email": data.email || "",
+            "Listing Type": data.listing_type || "Free Basic Listing",
+            "Status": "New"
+          }
+        }]
+      })
+    });
+    if (resp.ok) {
+      form.innerHTML = '<div style="text-align:center;padding:32px 0;"><p style="font-size:1.1rem;font-weight:600;color:#1F3A2E;">Thank you! 🙏</p><p style="color:#6B5F52;margin-top:8px;font-size:0.9rem;">We will review your listing and reach out within 48 hours.</p></div>';
+    } else { throw new Error("Submission failed"); }
+  } catch (err) {
+    btn.textContent = 'Submit My Business →';
+    btn.disabled = false;
+    alert("Something went wrong. Please email hello@thevibecompass.com to submit your listing.");
+  }
+}
+
+function handleEmailSignup(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  if (btn) { btn.textContent = '✓ You are in!'; btn.disabled = true; }
+  setTimeout(() => {
+    document.getElementById('beehiiv-form').innerHTML =
+      '<p style="color:#1F3A2E;font-weight:600;font-size:0.95rem;">You are on the list! 🙌 Watch for the weekly Vibe Guide.</p>';
+  }, 400);
+}
+
+async function initApp() {
+  document.getElementById('featured-grid').innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:#8B7B6B;font-size:0.9rem;">Loading listings...</div>';
+  document.getElementById('directory-list').innerHTML = '<div style="text-align:center;padding:40px;color:#8B7B6B;font-size:0.9rem;">Loading...</div>';
+  try {
+    const basePath = window.location.pathname.endsWith('/') 
+      ? window.location.pathname 
+      : window.location.pathname.replace(/\/[^/]*$/, '/');
+    const jsonUrl = basePath + 'data/listings.json';
+    const res = await fetch(jsonUrl);
+    if (!res.ok) throw new Error('Failed to load listings');
+    listings = await res.json();
+  } catch (err) {
+    console.error('Could not load listings.json:', err);
+    document.getElementById('featured-grid').innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:#D4614A;">Could not load listings. Please refresh.</div>';
+    document.getElementById('directory-list').innerHTML = '';
+    return;
+  }
+  renderFeatured();
+  renderDirectory();
+}
+
+initApp();
+</script>
+
+</body>
+  </html>
