@@ -1,0 +1,151 @@
+name: Sync Airtable Listings
+
+on:
+  schedule:
+    # Runs every day at 6am UTC (10pm PT / 11pm MT)
+    - cron: '0 6 * * *'
+  workflow_dispatch:  # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch listings from Airtable and write JSON
+        env:
+          AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
+          AIRTABLE_BASE_ID: appPlwjJooRNdfWAR
+          AIRTABLE_TABLE_ID: tblPgNNXnTNHannzU
+        run: |
+          python3 << 'EOF'
+          import os, json, re, requests
+
+          PAT = os.environ["AIRTABLE_PAT"]
+          BASE_ID = os.environ["AIRTABLE_BASE_ID"]
+          TABLE_ID = os.environ["AIRTABLE_TABLE_ID"]
+
+          # Airtable field ID → JSON key mapping
+          FIELD_MAP = {
+              "fldF10lL6bl2aomao": "name",
+              "fldfv5UneULOoGyxW": "category",
+              "fldWh4JLrx5WDISjv": "neighborhood",
+              "fldmVGYZ6qd7iMOuV": "neighborhoodLabel",
+              "fldsvEYqhhabn2uWH": "type",
+              "fldMdEPEmOQpjn6GQ": "ownership",
+              "fldWrpSdKNfC4qc3m": "ownershipLabel",
+              "fld5pqEM9955hfTY1": "emoji",
+              "fld8bEIeqyscrMeda": "description",
+              "fldZc32G4wOcA7AIL": "address",
+              "fldpxtZ0xTHb6SdtO": "tagsRaw",
+              "fldkmmKY39qRyHFkI": "photo",
+              "fldI2tOxPodmwtOtj": "website",
+              "fldgDMUNpGgcAckXl": "featured",
+              "fldM5fOOcULTpa8eN": "approved",
+          }
+
+          def slugify(text):
+              text = text.lower()
+              text = re.sub(r"[^\w\s-]", "", text)
+              text = re.sub(r"[\s_]+", "-", text)
+              text = re.sub(r"-+", "-", text).strip("-")
+              return text
+
+          headers = {"Authorization": f"Bearer {PAT}"}
+          url = f"https://api.airtable.com/v0/{BASE_ID}/{TABLE_ID}"
+
+          records = []
+          params = {"pageSize": 100}
+
+          while True:
+              resp = requests.get(url, headers=headers, params=params)
+              resp.raise_for_status()
+              data = resp.json()
+              records.extend(data.get("records", []))
+              offset = data.get("offset")
+              if not offset:
+                  break
+              params["offset"] = offset
+
+          listings = []
+          for rec in records:
+              fields = rec.get("cellValuesByFieldId") or rec.get("fields", {})
+
+              # Map fields
+              item = {}
+              for field_id, key in FIELD_MAP.items():
+                  item[key] = fields.get(field_id)
+
+              # Skip unapproved
+              if not item.get("approved"):
+                  continue
+
+              # Skip if no name
+              if not item.get("name"):
+                  continue
+
+              # Build clean object
+              listing = {
+                  "id": slugify(item["name"]),
+                  "name": item.get("name", ""),
+                  "category": item.get("category", "food"),
+                  "neighborhood": item.get("neighborhood", ""),
+                  "neighborhoodLabel": item.get("neighborhoodLabel", ""),
+                  "type": item.get("type", ""),
+                  "ownership": item.get("ownership", ""),
+                  "ownershipLabel": item.get("ownershipLabel", ""),
+                  "emoji": item.get("emoji", "📍"),
+                  "description": item.get("description", ""),
+                  "featured": bool(item.get("featured", False)),
+              }
+
+              # Optional fields
+              if item.get("address"):
+                  listing["address"] = item["address"]
+              if item.get("photo"):
+                  listing["photo"] = item["photo"]
+              if item.get("website"):
+                  listing["website"] = item["website"]
+
+              # Tags: comma-separated string → array
+              tags_raw = item.get("tagsRaw", "")
+              if tags_raw:
+                  listing["tags"] = [t.strip() for t in tags_raw.split(",") if t.strip()]
+              else:
+                  listing["tags"] = []
+
+              listings.append(listing)
+
+          # Sort: featured first, then alphabetical
+          listings.sort(key=lambda x: (not x["featured"], x["name"]))
+
+          output_path = "data/listings.json"
+          with open(output_path, "w", encoding="utf-8") as f:
+              json.dump(listings, f, ensure_ascii=False, indent=2)
+
+          print(f"✅ Wrote {len(listings)} approved listings to {output_path}")
+          EOF
+
+      - name: Commit updated listings if changed
+        run: |
+          git config user.name "Vibe Compass Bot"
+          git config user.email "hello@thevibecompass.com"
+          git add data/listings.json
+          if git diff --cached --quiet; then
+            echo "No changes to listings.json — skipping commit"
+          else
+            git commit -m "🗂 Auto-sync: update listings from Airtable [skip ci]"
+            git push
+          fi
