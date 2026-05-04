@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oakland BIPOC Guide — Best Black-Owned & BIPOC Restaurants, Shops & Culture | Vibe Compass</title>
+  <meta name="description" content="Your complete guide to Black-owned, Asian-owned, and BIPOC-centered restaurants, cafés, shops, and culture in Oakland, CA. Fruitvale, Temescal, Uptown, and beyond." />
+  <link rel="canonical" href="https://thevibecompass.com/neighborhoods/oakland.html" />
+
+  <meta property="og:title" content="Oakland BIPOC Guide — Vibe Compass" />
+  <meta property="og:description" content="The best Black-owned, Asian-owned, and BIPOC-centered spots in Oakland. From Fruitvale to Temescal, curated by locals." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=1200&h=630&fit=crop" />
+  <meta property="og:type" content="article" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Oakland BIPOC Guide: Best Black-Owned & Minority-Owned Restaurants, Shops & Culture",
+    "description": "A complete neighborhood guide to BIPOC-owned and BIPOC-centered businesses in Oakland, California.",
+    "url": "https://thevibecompass.com/neighborhoods/oakland.html",
+    "publisher": { "@type": "Organization", "name": "Vibe Compass", "url": "https://thevibecompass.com" },
+    "about": { "@type": "Place", "name": "Oakland, California" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --ink: #1A1209; --cream: #FFF8F0; --gold: #E8A838; --coral: #D4614A; --plum: #3B1F4E; --card-bg: #FFFCF7; --border: #EDE8E0; --tag-bg: #F5EFE6; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: var(--plum); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 62px; }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--gold); text-decoration: none; }
+    .nav-logo span { color: #fff; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    nav ul a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--ink) !important; padding: 8px 18px; border-radius: 100px; font-weight: 600 !important; }
+    @media (max-width: 640px) { nav ul { display: none; } }
+
+    .hero-guide { position: relative; height: 420px; overflow: hidden; display: flex; align-items: flex-end; }
+    .hero-guide img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-guide::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,18,9,0.85) 40%, rgba(0,0,0,0.2)); }
+    .hero-guide-content { position: relative; z-index: 2; padding: 40px 5%; width: 100%; }
+    .breadcrumb { font-size: 0.78rem; color: rgba(255,255,255,0.55); margin-bottom: 10px; }
+    .breadcrumb a { color: var(--gold); text-decoration: none; }
+    .hero-guide h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 5vw, 3.8rem); color: #fff; line-height: 1.1; margin-bottom: 12px; }
+    .hero-guide p { font-size: 1rem; color: rgba(255,255,255,0.72); max-width: 560px; }
+
+    .page-wrap { max-width: 860px; margin: 0 auto; padding: 56px 5%; }
+    .intro { font-size: 1.08rem; color: #4A3F34; line-height: 1.75; margin-bottom: 48px; border-left: 3px solid var(--gold); padding-left: 20px; }
+
+    h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 6px; margin-top: 52px; }
+    .section-sub { color: #6B5F52; font-size: 0.9rem; margin-bottom: 28px; }
+
+    .spot-list { display: flex; flex-direction: column; gap: 20px; margin-bottom: 12px; }
+    .spot { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; display: flex; gap: 18px; align-items: flex-start; }
+    .spot-num { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--gold); flex-shrink: 0; line-height: 1; min-width: 28px; }
+    .spot-info { flex: 1; }
+    .spot-name { font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin-bottom: 4px; }
+    .spot-meta { font-size: 0.76rem; color: #8B7B6B; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .ownership-badge { font-size: 0.66rem; font-weight: 600; padding: 2px 8px; border-radius: 100px; }
+    .black-owned { background: #1A1209; color: #fff; }
+    .asian-owned { background: #D4614A; color: #fff; }
+    .latinx-owned { background: #5C7C6B; color: #fff; }
+    .bipoc-owned { background: var(--plum); color: #fff; }
+    .spot p { font-size: 0.875rem; color: #4A3F34; line-height: 1.6; }
+    .spot-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+    .tag { background: var(--tag-bg); color: #5C4F42; font-size: 0.7rem; padding: 3px 10px; border-radius: 100px; border: 1px solid var(--border); }
+
+    .nhood-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 24px 0; }
+    .nhood-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+    .nhood-card h4 { font-family: 'DM Serif Display', serif; font-size: 1rem; margin-bottom: 6px; }
+    .nhood-card p { font-size: 0.8rem; color: #6B5F52; line-height: 1.5; }
+
+    .callout { background: var(--plum); color: #fff; border-radius: 16px; padding: 28px 28px; margin: 40px 0; }
+    .callout h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 8px; }
+    .callout p { font-size: 0.875rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+    .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--plum); font-size: 0.875rem; font-weight: 600; text-decoration: none; margin-bottom: 32px; }
+    .back-link:hover { text-decoration: underline; }
+
+    footer { background: var(--ink); color: rgba(255,255,255,0.45); text-align: center; padding: 32px 5%; font-size: 0.8rem; margin-top: 40px; }
+    footer strong { color: var(--gold); }
+    footer a { color: rgba(255,255,255,0.45); }
+  </style>
+  <!-- ✅ Google Analytics — Replace G-XXXXXXXXXX with your Measurement ID -->
+  <!-- Get your ID at: analytics.google.com → Admin → Data Streams → Web -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Vibe <span>Compass</span></a>
+  <ul>
+    <li><a href="/#directory">Directory</a></li>
+    <li><a href="/neighborhoods/mission-sf.html">SF Mission</a></li>
+    <li><a href="/" class="nav-cta">Back to Directory</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero-guide">
+  <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=1200&h=500&fit=crop&auto=format" alt="Oakland neighborhood guide" />
+  <div class="hero-guide-content">
+    <p class="breadcrumb"><a href="/">Vibe Compass</a> / Neighborhood Guides / Oakland</p>
+    <h1>Oakland</h1>
+    <p>The most culturally rich city in the Bay — legacy BBQ joints, Cambodian gems, jazz clubs, and the oldest Black bookstore in America.</p>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <a href="/" class="back-link">← Back to Full Directory</a>
+
+  <p class="intro">Oakland has always been a Black city. Its culture, its energy, its food — all rooted in generations of Black, Asian, and Latinx communities who built something real here. This guide doesn't rank the most Instagrammable spots. It highlights the places that make Oakland, Oakland — the institutions, the hidden gems, and the spots that locals are protective of for good reason.</p>
+
+  <!-- NEIGHBORHOODS -->
+  <h2>Oakland by Neighborhood</h2>
+  <p class="section-sub">Oakland is not one neighborhood — each area has its own distinct energy and cultural identity.</p>
+  <div class="nhood-grid">
+    <div class="nhood-card">
+      <h4>🍊 Fruitvale</h4>
+      <p>The heart of Oakland's Latinx and immigrant communities. The best taquerias, panaderías, and produce markets in the East Bay. Dense, vibrant, and deeply neighborhood.</p>
+    </div>
+    <div class="nhood-card">
+      <h4>🎷 Uptown</h4>
+      <p>Arts, nightlife, jazz clubs, and Black-owned bars. This is where Oakland's cultural scene lives after dark — from Yoshi's to the Fox Theater.</p>
+    </div>
+    <div class="nhood-card">
+      <h4>🌿 Temescal</h4>
+      <p>A mix of long-time residents and newer arrivals, with some of the city's best restaurants, cafés, and independent shops. Increasingly gentrified, but still plenty of culture.</p>
+    </div>
+    <div class="nhood-card">
+      <h4>🏛 West Oakland</h4>
+      <p>The historic heart of Black Oakland. Legacy spots, murals, community gardens, and the neighborhood most committed to staying Oakland despite the pressure.</p>
+    </div>
+  </div>
+
+  <!-- EAT -->
+  <h2>Where to Eat</h2>
+  <p class="section-sub">From 50-year-old institutions to the next James Beard nominee — Oakland's BIPOC food scene has no equal in the Bay.</p>
+
+  <div class="spot-list">
+    <div class="spot">
+      <div class="spot-num">1</div>
+      <div class="spot-info">
+        <div class="spot-name">Everett & Jones BBQ</div>
+        <div class="spot-meta"><span class="ownership-badge black-owned">Black-Owned</span> · Restaurant · Multiple Locations</div>
+        <p>An Oakland institution since 1973. Slow-smoked ribs, links, and chicken with house-made sauce that has earned its legendary status. Three generations of the Jones family have kept this going — and Oakland is better for it. If you visit one spot on this list, make it this one.</p>
+        <div class="spot-tags"><span class="tag">BBQ</span><span class="tag">Legacy Spot</span><span class="tag">Dine-In</span><span class="tag">Since 1973</span></div>
+      </div>
+    </div>
+    <div class="spot">
+      <div class="spot-num">2</div>
+      <div class="spot-info">
+        <div class="spot-name">Souley Vegan</div>
+        <div class="spot-meta"><span class="ownership-badge black-owned">Black-Owned</span> · Vegan Restaurant · Old Oakland</div>
+        <p>Oakland's original Black-owned vegan restaurant. Don't let the "vegan" label mislead you — this is soul food. Collard greens, mac and cheese, fried mushrooms that taste like chicken. Comfort food that happens to be plant-based. A community pillar for over 15 years.</p>
+        <div class="spot-tags"><span class="tag">Vegan</span><span class="tag">Soul Food</span><span class="tag">Comfort Food</span><span class="tag">Black-Owned</span></div>
+      </div>
+    </div>
+    <div class="spot">
+      <div class="spot-num">3</div>
+      <div class="spot-info">
+        <div class="spot-name">Nyum Bai</div>
+        <div class="spot-meta"><span class="ownership-badge asian-owned">Cambodian-Owned</span> · Restaurant · Fruitvale</div>
+        <p>James Beard Award-nominated Cambodian restaurant rooted in the food of Phnom Penh. Chef Nite Yun's cooking is deeply personal — every dish is about memory, survival, and celebration. The num banh chok (noodles in green curry) is a revelation. This is what BIPOC-owned fine dining looks like.</p>
+        <div class="spot-tags"><span class="tag">Cambodian</span><span class="tag">James Beard</span><span class="tag">Dinner</span><span class="tag">Special Occasion</span></div>
+      </div>
+    </div>
+    <div class="spot">
+      <div class="spot-num">4</div>
+      <div class="spot-info">
+        <div class="spot-name">Hawker Fare</div>
+        <div class="spot-meta"><span class="ownership-badge asian-owned">Filipino-Owned</span> · Restaurant · Uptown Oakland</div>
+        <p>Chef James Syhabout's tribute to Southeast Asian street food. Filipino and Isan Thai flavors in a loud, vibrant room that feels like eating at a night market in Manila. The khao man gai and sisig are must-orders. One of Oakland's most consistently excellent restaurants.</p>
+        <div class="spot-tags"><span class="tag">Filipino</span><span class="tag">Thai</span><span class="tag">Street Food</span><span class="tag">Dinner</span></div>
+      </div>
+    </div>
+    <div class="spot">
+      <div class="spot-num">5</div>
+      <div class="spot-info">
+        <div class="spot-name">Burma Superstar</div>
+        <div class="spot-meta"><span class="ownership-badge asian-owned">Burmese-Owned</span> · Restaurant · Oakland & SF</div>
+        <p>The restaurant that introduced the entire Bay Area to Burmese cuisine. The Tea Leaf Salad alone is worth a trip — a textural, layered experience unlike anything else. Expect a wait. Go anyway. One of those spots that proves Oakland's food scene has always been ahead of its time.</p>
+        <div class="spot-tags"><span class="tag">Burmese</span><span class="tag">Iconic</span><span class="tag">Tea Leaf Salad</span><span class="tag">Dine-In</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRINK -->
+  <h2>Where to Drink</h2>
+  <p class="section-sub">From natural wine bars to legendary jazz clubs — Oakland's BIPOC-owned nightlife is unmatched.</p>
+
+  <div class="spot-list">
+    <div class="spot">
+      <div class="spot-num">1</div>
+      <div class="spot-info">
+        <div class="spot-name">Perle Wine Bar</div>
+        <div class="spot-meta"><span class="ownership-badge black-owned">Black-Owned</span> · Wine Bar · Oakland</div>
+        <p>A sophisticated wine bar owned by a Black woman sommelier. Natural and low-intervention wines, thoughtful small bites, and a space where Black women and queer people are not just welcomed but centered. Date night, girls' night, or solo with a book — Perle is always the right call.</p>
+        <div class="spot-tags"><span class="tag">Wine</span><span class="tag">Date Night</span><span class="tag">Black-Owned</span><span class="tag">Intimate</span></div>
+      </div>
+    </div>
+    <div class="spot">
+      <div class="spot-num">2</div>
+      <div class="spot-info">
+        <div class="spot-name">Yoshi's Oakland</div>
+        <div class="spot-meta"><span class="ownership-badge asian-owned">Japanese-Owned</span> · Jazz Club & Restaurant · Jack London Square</div>
+        <p>One of the most respected jazz clubs in the country, full stop. World-class musicians from around the globe perform here regularly. Japanese-influenced menu. A room that feels like history is being made every night. Check the calendar before your visit and buy tickets in advance.</p>
+        <div class="spot-tags"><span class="tag">Jazz</span><span class="tag">Live Music</span><span class="tag">Japanese</span><span class="tag">Date Night</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOP & CULTURE -->
+  <h2>Shop & Culture</h2>
+  <p class="section-sub">Oakland's independent shops and cultural institutions are irreplaceable. Support them.</p>
+
+  <div class="spot-list">
+    <div class="spot">
+      <div class="spot-num">1</div>
+      <div class="spot-info">
+        <div class="spot-name">Marcus Books</div>
+        <div class="spot-meta"><span class="ownership-badge black-owned">Black-Owned</span> · Bookstore · 3900 MLK Jr Way</div>
+        <p>The oldest Black-owned bookstore in the United States, open since 1960. Raiford and Julian Richardson built something that has outlasted every trend, every gentrification wave, every cultural shift. This is not just a bookstore — it is an archive of Black intellectual history and a gathering place for the community. Buy something. Stay a while.</p>
+        <div class="spot-tags"><span class="tag">Books</span><span class="tag">Legacy</span><span class="tag">Cultural Hub</span><span class="tag">Since 1960</span></div>
+      </div>
+    </div>
+    <div class="spot">
+      <div class="spot-num">2</div>
+      <div class="spot-info">
+        <div class="spot-name">Oaklandish</div>
+        <div class="spot-meta"><span class="ownership-badge black-owned">Community-Owned</span> · Apparel & Gifts · Uptown Oakland</div>
+        <p>The original Oakland pride brand, now employee-owned. Every purchase here directly supports Oakland artists and community organizations. T-shirts, hoodies, art prints, and gifts that say "I am from here and I love it." A perfect stop for visitors who want to take a piece of real Oakland home with them.</p>
+        <div class="spot-tags"><span class="tag">Apparel</span><span class="tag">Gifts</span><span class="tag">Oakland Pride</span><span class="tag">Community-Owned</span></div>
+      </div>
+    </div>
+    <div class="spot">
+      <div class="spot-num">3</div>
+      <div class="spot-info">
+        <div class="spot-name">Destiny Arts Center</div>
+        <div class="spot-meta"><span class="ownership-badge bipoc-owned">BIPOC-Led</span> · Arts Center & Events · North Oakland</div>
+        <p>Oakland's premier youth arts organization. Dance, martial arts, circus arts, and theater — all centering the brilliance of BIPOC young people. Their public performances are electric. Check their events calendar before any visit to Oakland; catching a show here is a genuine privilege.</p>
+        <div class="spot-tags"><span class="tag">Arts</span><span class="tag">Events</span><span class="tag">Youth</span><span class="tag">BIPOC-Led</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAFES -->
+  <h2>Coffee & Cafés</h2>
+  <p class="section-sub">Oakland's BIPOC-owned café scene is small but serious — these are worth seeking out.</p>
+
+  <div class="spot-list">
+    <div class="spot">
+      <div class="spot-num">1</div>
+      <div class="spot-info">
+        <div class="spot-name">Bica Coffeehouse</div>
+        <div class="spot-meta"><span class="ownership-badge black-owned">Black-Owned</span> · Café · Oakland</div>
+        <p>A community-rooted coffee shop where the beans are carefully sourced and the vibe is genuinely warm. Laptop-friendly, neighborhood-welcoming, and reliably good. One of the few Oakland cafés where you actually feel like you belong if you're a person of color walking in alone.</p>
+        <div class="spot-tags"><span class="tag">Coffee</span><span class="tag">Work-Friendly</span><span class="tag">Community</span><span class="tag">Black-Owned</span></div>
+      </div>
+    </div>
+    <div class="spot">
+      <div class="spot-num">2</div>
+      <div class="spot-info">
+        <div class="spot-name">Asha Tea House</div>
+        <div class="spot-meta"><span class="ownership-badge asian-owned">Asian-Owned</span> · Café · Oakland & Berkeley</div>
+        <p>Elevated Asian tea culture reimagined for California. From hand-pulled boba to rare oolongs and creative seasonal drinks, this is a tea experience unlike anything else in the Bay. The sesame soft serve is non-negotiable. Beautiful space, intentional sourcing, and always worth the line.</p>
+        <div class="spot-tags"><span class="tag">Tea</span><span class="tag">Boba</span><span class="tag">Asian-Owned</span><span class="tag">Aesthetic</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h3>Know a spot we're missing?</h3>
+    <p>This guide grows with the community. If there's a Black-owned, Asian-owned, Latinx-owned, or BIPOC-centered business in Oakland we should add, submit it and we'll review it within 48 hours. Every listing is verified and adds to the directory for free.</p>
+    <br/>
+    <a href="/#list-your-business" style="color:var(--gold);font-weight:600;font-size:0.875rem;">Submit a listing →</a>
+  </div>
+
+  <!-- SEO FOOTER TEXT -->
+  <div style="margin-top:48px; padding-top:32px; border-top:1px solid var(--border);">
+    <h2 style="font-size:1.1rem; margin-top:0; color:#6B5F52;">About This Guide</h2>
+    <p style="font-size:0.82rem; color:#8B7B6B; line-height:1.7; margin-top:8px;">
+      Vibe Compass is a Bay Area BIPOC business directory and city guide. This Oakland neighborhood guide highlights Black-owned restaurants in Oakland, Asian-owned businesses in Oakland, and BIPOC-owned shops, cafes, and cultural spaces across Fruitvale, Uptown, West Oakland, Temescal, and surrounding neighborhoods. Updated regularly. All listings are community-verified. <a href="/" style="color:var(--coral);">Browse the full Bay Area directory →</a>
+    </p>
+  </div>
+</div>
+
+<footer>
+  <p><strong>Vibe Compass</strong> · Bay Area BIPOC Business Guide</p>
+  <p style="margin-top:6px;">Curated with love for the community · <a href="mailto:hello@thevibecompass.com">hello@thevibecompass.com</a></p>
+</footer>
+
+</body>
+</html>
