@@ -1080,7 +1080,7 @@ async function handleSubmitForm(e) {
   btn.textContent = 'Submitting...';
   btn.disabled = true;
   const data = Object.fromEntries(new FormData(form).entries());
-  const AIRTABLE_WRITE_TOKEN = "YOUR_WRITE_ONLY_PAT_HERE";
+  const AIRTABLE_WRITE_TOKEN = "patUadYAhdKuTo20W.fed56a38c1f6e514c59b540fbf0951812ddb80f222a0f1e0f449a496067d582a";
   try {
     const resp = await fetch("https://api.airtable.com/v0/appPlwjJooRNdfWAR/tbl0CMaqSyIc1I9F9", {
       method: "POST",
