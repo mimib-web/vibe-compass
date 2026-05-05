@@ -1080,29 +1080,11 @@ async function handleSubmitForm(e) {
   btn.textContent = 'Submitting...';
   btn.disabled = true;
   const data = Object.fromEntries(new FormData(form).entries());
-  const AIRTABLE_WRITE_TOKEN = "patUadYAhdKuTo20W.fed56a38c1f6e514c59b540fbf0951812ddb80f222a0f1e0f449a496067d582a";
   try {
-    const resp = await fetch("https://api.airtable.com/v0/appPlwjJooRNdfWAR/tbl0CMaqSyIc1I9F9", {
+    const resp = await fetch("/api/submit-listing", {
       method: "POST",
-      headers: {
-        "Authorization": `Bearer ${AIRTABLE_WRITE_TOKEN}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        records: [{
-          fields: {
-            "Business Name": data.business_name || "",
-            "Category": data.category || "",
-            "Neighborhood/City": data.neighborhood || "",
-            "Ownership": data.ownership || "",
-            "Description": data.description || "",
-            "Website or Instagram": data.website || "",
-            "Contact Email": data.email || "",
-            "Listing Type": data.listing_type || "Free Basic Listing",
-            "Status": "New"
-          }
-        }]
-      })
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
     });
     if (resp.ok) {
       form.innerHTML = '<div style="text-align:center;padding:32px 0;"><p style="font-size:1.1rem;font-weight:600;color:#1F3A2E;">Thank you! 🙏</p><p style="color:#6B5F52;margin-top:8px;font-size:0.9rem;">We will review your listing and reach out within 48 hours.</p></div>';
